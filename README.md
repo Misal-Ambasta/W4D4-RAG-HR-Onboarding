@@ -11,7 +11,7 @@ This project replaces manual HR induction calls with an interactive AI assistant
 
 ## ✨ Features
 - **Document Upload:** Upload PDF, DOCX, and TXT HR documents via a beautiful admin dashboard.
-- **Automated Processing:** Extracts, chunks, and embeds HR content using OpenAI and LangChain, storing vectors in ChromaDB.
+- **Automated Processing:** Extracts, recursively chunks (using robust recursive splitting), and embeds HR content using OpenAI and LangChain, storing vectors in ChromaDB. Supports audio-to-text conversion using Whisper.
 - **Conversational AI:** Employees chat with the assistant to get instant answers, with policy citations and source snippets.
 - **Query Categorization:** All queries are auto-tagged (Benefits, Leave, Conduct, General) and usage stats are tracked persistently.
 - **Admin Dashboard:** Manage documents, view status, delete files, update categories, and see real usage stats.
@@ -22,7 +22,7 @@ This project replaces manual HR induction calls with an interactive AI assistant
 ---
 
 ## 🛠️ Tech Stack
-- **Backend:** FastAPI (Python), LangChain (modular: langchain, langchain-openai, langchain-chroma, langchain-text-splitters), ChromaDB (via LangChain), OpenAI Embeddings
+- **Backend:** FastAPI (Python), LangChain (modular: langchain, langchain-openai, langchain-chroma, langchain-text-splitters), ChromaDB (via LangChain), OpenAI Embeddings (`text-embedding-3-small`), Whisper (audio-to-text), GPT-4o-mini (response generation)
 - **Frontend:** Vite + React (TypeScript), TailwindCSS
 - **Other:** Python-dotenv, docx2txt, PyPDF2
 

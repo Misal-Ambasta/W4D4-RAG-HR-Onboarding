@@ -53,7 +53,7 @@ def query_hr_docs(query, metadata_filter=None):
     # Compose context for LLM prompt
     context = "\n".join([doc.page_content for doc, _ in results])
     prompt = f"You are an HR assistant. Use ONLY the context below to answer the user's question.\n\nContext:\n{context}\n\nQuestion: {query}\n\nAnswer as helpfully as possible."
-    llm = ChatOpenAI(model="gpt-4", temperature=0)
+    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
     answer = llm.invoke(prompt).content
     category = categorize_query(query)
     return answer, results, category
