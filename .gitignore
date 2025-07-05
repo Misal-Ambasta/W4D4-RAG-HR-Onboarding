@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+.venv/
+.env
+
+
+
+# FastAPI
+instance/
+*.db
+
+# ChromaDB vector store
+chroma_db/
+
+# Node.js / Vite / React
+node_modules/
+dist/
+build/
+coverage/
+.next/
+
+# Editor/OS
+.DS_Store
+.vscode/
+.idea/
+.envrc
+.mypy_cache/
+.pnp.*
+
+# Test cache
+.pytest_cache/
+
+# Logs
+*.log
+
+# Misc
+*.bak
+*.swp
+
+todo.md
