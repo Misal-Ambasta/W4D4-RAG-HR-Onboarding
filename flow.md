@@ -94,11 +94,15 @@ Return status/data to frontend
 ```mermaid
 flowchart TD
     A[User: AdminDashboard] -->|GET /documents| B[routers.list_documents]
-    A -->|DELETE /documents/{filename}| C[routers.delete_document]
+    A -->|DELETE /documents/filename| C[routers.delete_document]
     A -->|GET /stats| D[routers.get_stats]
-    B & C & D --> E[File system / pipeline.vector_delete]
-    E --> F[ChromaDB: Update/read]
-    F --> G[Return status/data]
+    B --> E[File system operations]
+    C --> F[pipeline.delete_document_vectors]
+    D --> G[Retrieve usage statistics]
+    E --> H[Return document list]
+    F --> I[ChromaDB: Update vectors]
+    G --> J[Return stats data]
+    I --> K[Return deletion status]
 ```
 
 ---
